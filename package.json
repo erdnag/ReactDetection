@@ -1,7 +1,7 @@
 {
   "name": "facerecognitionbrain",
   "version": "0.1.0",
-  "homepage": "https://erdnag.github.io/react-gh-pages",
+  "homepage": "https://erdnag.github.io/ReactDetection",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
