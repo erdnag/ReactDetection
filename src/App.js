@@ -5,6 +5,11 @@ import Rank from './components/Rank/Rank';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import './App.css';
 import { Component} from 'react';
+import Clarifai from 'clarifai';
+
+const app = new Clarifai.App({
+  apiKey: 'a5e29738c06548b09c5d56dd8ffe6d2a'
+ });
 
 class App extends Component {
   constructor(){
@@ -22,6 +27,17 @@ class App extends Component {
   onButtonSubmit = () => {
     console.log('click');
     this.setState({imageUrl:this.state.input});
+    app.models.predict(
+      Clarifai.FACE_DETECT_MODEL,
+      this.state.input).then(
+        function(response) {
+          console.log(response);
+        },
+        function(err){
+
+        }
+      );
+
   }
   render(){
   return (
